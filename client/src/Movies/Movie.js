@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"; 
 import axios from "axios";
 import MovieCard from "./MovieCard";
 export default class Movie extends React.Component {
@@ -22,7 +23,8 @@ export default class Movie extends React.Component {
   fetchMovie = id => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
-      .then(res => this.setState({ movie: res.data }))
+      .then(res => {console.log(res.data);
+        this.setState({ movie: res.data })})
       .catch(err => console.log(err.response));
   };
 
@@ -30,6 +32,7 @@ export default class Movie extends React.Component {
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie);
   };
+
 
   render() {
     if (!this.state.movie) {
@@ -41,6 +44,10 @@ export default class Movie extends React.Component {
         <MovieCard movie={this.state.movie} />
         <div className="save-button" onClick={this.saveMovie}>
           Save
+        </div>
+
+        <div className="edit-button">
+          <Link to={`/update-movie${this.props.match.params.id}`}> Update Movie </Link> 
         </div>
       </div>
     );
