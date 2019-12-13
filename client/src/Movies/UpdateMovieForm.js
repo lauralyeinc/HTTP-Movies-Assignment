@@ -21,7 +21,7 @@ const UpdateMovieForm = props => {
     }, [props.savedList, props.match.params.id]);
 
     const handleChange = event => {
-        event.persist();      //?
+        // event.persist();      //?
         let value = event.target.value; 
         setMovie({
             ...movie, 
@@ -36,7 +36,7 @@ const UpdateMovieForm = props => {
         .put(`http:localhost:5000/edit-movie/${movie.id}`, movie)
         .then(res => {
             console.log(res);
-            props.updateItems(res.data); //?? updateItems
+            props.updateItems(res.data); 
             props.history.goBack();
         })
         .catch(err => {

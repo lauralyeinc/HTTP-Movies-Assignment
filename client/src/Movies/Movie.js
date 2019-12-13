@@ -1,4 +1,4 @@
-import React from "react";
+import React, {link} from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
 export default class Movie extends React.Component {
@@ -42,6 +42,7 @@ export default class Movie extends React.Component {
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
+        <link to="edit-movie/:id"><button> Edit Movie </button> </link>
       </div>
     );
   }

@@ -24,7 +24,7 @@ const App = () => {
         }}
       />
 
-      <Route path="/edit-movie/:id" component={Movie} />
+      {/* <Route path="/edit-movie/:id" component={Movie} /> */}
       <Route path="update-movie/:id" render={props => (
         <UpdateMovieForm {...props} savedList={savedList} updateItems={setSavedList} />
       )}
