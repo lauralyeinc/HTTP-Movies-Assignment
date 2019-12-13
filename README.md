@@ -19,7 +19,7 @@ DONE
 
 - The form should make a PUT request to the server when submitted YES 
 
-- When the call comes back successfully, reset your form state and route the user to `/movies` where they will see the updated movie in the list
+- When the call comes back successfully, reset your form state and route the user to `/movies` where they will see the updated movie in the list  NOT DONE 
 
 Movie object format:
 

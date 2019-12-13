@@ -25,10 +25,14 @@ const App = () => {
       />
 
       {/* <Route path="/edit-movie/:id" component={Movie} /> */}
-      <Route path="update-movie/:id" render={props => (
-        <UpdateMovieForm {...props} savedList={savedList} updateItems={setSavedList} />
-      )}
-      /> 
+      {/* <Route 
+        path="/update-movie/:id"
+        render={props => { 
+          return <UpdateMovieForm {...props} savedList={savedList} updateItems={setSavedList} />;
+}}
+      />  */}
+
+      <Route path="/update-movie/:id" component={UpdateMovieForm} />
     </>
   );
 };
